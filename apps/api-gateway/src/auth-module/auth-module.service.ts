@@ -7,7 +7,7 @@ import { ClientProxy } from '@nestjs/microservices';
 export class AuthModuleService {
   constructor(@Inject('USERS_CLIENT') private authClient: ClientProxy) {}
   create(createAuthModuleDto: CreateAuthModuleDto) {
-    return 'This action adds a new authModule';
+    return 'This action adds a new authModul';
   }
 
   findAll() {
