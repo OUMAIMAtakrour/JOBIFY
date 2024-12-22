@@ -6,12 +6,15 @@ import { ClientProxy } from '@nestjs/microservices';
 @Injectable()
 export class AuthModuleService {
   constructor(@Inject('USERS_CLIENT') private authClient: ClientProxy) {}
+  login(body) {
+    return this.authClient.send('auth.login', body);
+  }
   create(createAuthModuleDto: CreateAuthModuleDto) {
     return 'This action adds a new authModul';
   }
 
   findAll() {
-     return this.authClient.send('users.findAll', {});
+    return this.authClient.send('users.findAll', {});
   }
 
   findOne(id: number) {

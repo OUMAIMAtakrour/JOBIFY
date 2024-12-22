@@ -6,10 +6,9 @@ import { UpdateAuthModuleDto } from './dto/update-auth-module.dto';
 @Controller('auth-module')
 export class AuthModuleController {
   constructor(private readonly authModuleService: AuthModuleService) {}
-
-  @Post()
-  create(@Body() createAuthModuleDto: CreateAuthModuleDto) {
-    return this.authModuleService.create(createAuthModuleDto);
+  @Post('login')
+  login(@Body() body) {
+    return this.authModuleService.login(body);
   }
 
   @Get()
@@ -23,7 +22,10 @@ export class AuthModuleController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateAuthModuleDto: UpdateAuthModuleDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateAuthModuleDto: UpdateAuthModuleDto,
+  ) {
     return this.authModuleService.update(+id, updateAuthModuleDto);
   }
 
