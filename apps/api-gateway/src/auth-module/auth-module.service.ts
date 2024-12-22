@@ -9,6 +9,9 @@ export class AuthModuleService {
   login(body) {
     return this.authClient.send('auth.login', body);
   }
+  register(body) {
+    return this.authClient.send('auth.register', body);
+  }
   create(createAuthModuleDto: CreateAuthModuleDto) {
     return 'This action adds a new authModul';
   }

@@ -53,8 +53,8 @@ export class AuthServiceService {
         this.keycloakUrl,
         new URLSearchParams({
           grant_type: 'client_credentials',
-          client_id: 'public-client',
-          client_secret: 'm2rCB6qt0Oq2AcV84WqV3HbOdo8PWuN4',
+          client_id: 'admin-cli',
+          client_secret: 'Nkr7tjcFfNCdoeNkkJCoVA1fgQLY1ZKZ',
         }),
         {
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -82,7 +82,7 @@ export class AuthServiceService {
             {
               type: 'password',
               value: password,
-              temporary: false, // Optional: set true if you want the user to reset the password.
+              temporary: false, 
             },
           ],
         },
@@ -94,7 +94,7 @@ export class AuthServiceService {
         },
       );
 
-      return response.data; // Return created user details if needed.
+      return response.data; 
     } catch (error) {
       console.error('Registration error:', error.response?.data);
       throw new HttpException('Registration failed', 500);

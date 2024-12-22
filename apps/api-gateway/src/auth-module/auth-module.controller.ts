@@ -10,7 +10,10 @@ export class AuthModuleController {
   login(@Body() body) {
     return this.authModuleService.login(body);
   }
-
+  @Post('register')
+  register(@Body() body) {
+    return this.authModuleService.register(body);
+  }
   @Get()
   findAll() {
     return this.authModuleService.findAll();
